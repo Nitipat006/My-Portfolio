@@ -3,185 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Portfolio</title>
-    <!-- Tailwind CSS for modern styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Sarabun -->
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>My Portfolio</title>
     <style>
         body {
-            font-family: 'Sarabun', sans-serif;
-            scroll-behavior: smooth;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f9;
+            color: #333;
         }
-        .skill-card:hover {
+
+        header {
+            background: linear-gradient(135deg, #007FFF, #0056b3);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            border-left: 5px solid #007FFF;
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        .skills span {
+            display: inline-block;
+            background: #007FFF;
+            color: white;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
             transform: translateY(-5px);
-            transition: all 0.3s ease;
         }
-        .glass-morphism {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+
+        .contact a {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            text-decoration: none;
+            color: white;
+            background: #007FFF;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .contact a:hover {
+            background: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+        @media(max-width: 600px){
+            header h1 {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 glass-morphism shadow-sm">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div class="text-xl font-bold text-blue-600">MYPORTFOLIO</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="hover:text-blue-600 transition">หน้าแรก</a>
-                    <a href="#about" class="hover:text-blue-600 transition">เกี่ยวกับฉัน</a>
-                    <a href="#skills" class="hover:text-blue-600 transition">ทักษะ</a>
-                    <a href="#contact" class="hover:text-blue-600 transition">ติดต่อ</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <header>
+        <h1>ชื่อ - นามสกุล</h1>
+        <p>นักศึกษาสาขาเทคโนโลยีสารสนเทศ | Web Developer</p>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 px-4 bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="mb-8 flex justify-center">
-                <!-- Placeholder Profile Image -->
-                <div class="w-40 h-40 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-200">
-                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="โปรไฟล์ของฉัน" class="w-full h-full object-cover">
-                </div>
-            </div>
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-gray-900">สวัสดี, ฉันชื่อ <span class="text-blue-600">[ชื่อ-นามสกุล ของคุณ]</span></h1>
-            <p class="text-xl text-gray-600 mb-8">นักศึกษาคณะวิศวกรรมศาสตร์ / นักพัฒนาซอฟต์แวร์รุ่นใหม่</p>
-            <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition shadow-md">
-                ติดต่อฉัน
-            </a>
+    <section>
+        <h2>ประวัติย่อ</h2>
+        <p>
+            สวัสดีครับ/ค่ะ ฉันเป็นนักศึกษาที่สนใจด้านการพัฒนาเว็บไซต์
+            มีความตั้งใจในการเรียนรู้เทคโนโลยีใหม่ ๆ และพัฒนาทักษะอยู่เสมอ
+        </p>
+    </section>
+
+    <section>
+        <h2>ทักษะ</h2>
+        <div class="skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>MySQL</span>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center border-b-2 border-blue-600 w-fit mx-auto pb-2">เกี่ยวกับฉัน</h2>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                <p class="text-lg leading-relaxed text-gray-600 mb-6">
-                    ยินดีต้อนรับสู่พื้นที่รวบรวมผลงานของฉัน! ฉันเป็นนักศึกษาที่มีความสนใจในการเรียนรู้เทคโนโลยีใหม่ๆ และชอบแก้ปัญหาด้วยการเขียนโปรแกรม 
-                    มีความมุ่งมั่นที่จะพัฒนาทักษะทางด้านการออกแบบเว็บไซต์และการพัฒนาซอฟต์แวร์ให้ดียิ่งขึ้นในทุกๆ วัน
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div class="flex items-center space-x-2">
-                        <span class="font-bold">การศึกษา:</span>
-                        <span>ปริญญาตรี [ชื่อคณะ/สาขา] [ชื่อมหาวิทยาลัย]</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <span class="font-bold">ที่อยู่:</span>
-                        <span>กรุงเทพมหานคร, ประเทศไทย</span>
-                    </div>
-                </div>
+    <section>
+        <h2>ผลงาน</h2>
+        <div class="projects">
+            <div class="card">
+                <h3>เว็บไซต์ร้านค้าออนไลน์</h3>
+                <p>พัฒนาเว็บไซต์ E-commerce ด้วย HTML, CSS และ JavaScript</p>
+            </div>
+            <div class="card">
+                <h3>ระบบจัดการนักศึกษา</h3>
+                <p>พัฒนาด้วย PHP และ MySQL สำหรับจัดการข้อมูลนักศึกษา</p>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 px-4 bg-gray-100">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center border-b-2 border-blue-600 w-fit mx-auto pb-2">ทักษะความสามารถ</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Skill 1 -->
-                <div class="skill-card bg-white p-6 rounded-xl shadow-sm text-center">
-                    <div class="text-4xl mb-3">🌐</div>
-                    <h3 class="font-bold mb-2">HTML/CSS</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
-                    </div>
-                </div>
-                <!-- Skill 2 -->
-                <div class="skill-card bg-white p-6 rounded-xl shadow-sm text-center">
-                    <div class="text-4xl mb-3">📜</div>
-                    <h3 class="font-bold mb-2">JavaScript</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
-                    </div>
-                </div>
-                <!-- Skill 3 -->
-                <div class="skill-card bg-white p-6 rounded-xl shadow-sm text-center">
-                    <div class="text-4xl mb-3">🎨</div>
-                    <h3 class="font-bold mb-2">UI Design</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-blue-600 h-2 rounded-full" style="width: 70%"></div>
-                    </div>
-                </div>
-                <!-- Skill 4 -->
-                <div class="skill-card bg-white p-6 rounded-xl shadow-sm text-center">
-                    <div class="text-4xl mb-3">🐍</div>
-                    <h3 class="font-bold mb-2">Python</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-blue-600 h-2 rounded-full" style="width: 60%"></div>
-                    </div>
-                </div>
-            </div>
+    <section>
+        <h2>ติดต่อ</h2>
+        <div class="contact">
+            <a href="#">Email</a>
+            <a href="#">Facebook</a>
+            <a href="#">GitHub</a>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center border-b-2 border-blue-600 w-fit mx-auto pb-2">ช่องทางติดต่อ</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">ส่งข้อความหาฉัน</h3>
-                    <form id="contactForm" class="space-y-4">
-                        <input type="text" placeholder="ชื่อของคุณ" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                        <input type="email" placeholder="อีเมลของคุณ" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                        <textarea placeholder="ข้อความ" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
-                        <button type="button" onclick="sendMessage()" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition">
-                            ส่งข้อความ
-                        </button>
-                    </form>
-                    <div id="statusMessage" class="hidden mt-4 p-3 bg-green-100 text-green-700 rounded-lg text-center">
-                        ส่งข้อความสำเร็จ! (จำลอง)
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center space-y-6">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-blue-100 p-3 rounded-full text-blue-600 text-xl">📧</div>
-                        <div>
-                            <p class="font-bold">Email</p>
-                            <p class="text-gray-600">student@university.ac.th</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-blue-100 p-3 rounded-full text-blue-600 text-xl">📞</div>
-                        <div>
-                            <p class="font-bold">Phone</p>
-                            <p class="text-gray-600">08x-xxx-xxxx</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-blue-100 p-3 rounded-full text-blue-600 text-xl">🔗</div>
-                        <div>
-                            <p class="font-bold">Social Media</p>
-                            <p class="text-gray-600">Facebook / LinkedIn / GitHub</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-white py-8 border-t border-gray-200 text-center text-gray-500 text-sm">
-        <p>© 2024 Created by [ชื่อของคุณ]. All Rights Reserved.</p>
+    <footer>
+        © 2026 My Portfolio | All Rights Reserved
     </footer>
 
-    <script>
-        function sendMessage() {
-            const status = document.getElementById('statusMessage');
-            status.classList.remove('hidden');
-            setTimeout(() => {
-                status.classList.add('hidden');
-            }, 3000);
-            document.getElementById('contactForm').reset();
-        }
-    </script>
 </body>
 </html>
