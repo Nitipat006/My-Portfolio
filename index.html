@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <!-- Google Fonts: Noto Sans Thai -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans Thai', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            max-width: 600px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* About & Skills */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: var(--white);
+            padding: 8px 16px;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            font-size: 0.9rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; /* Simple mobile adjustment */
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">MYPORTFOLIO</div>
+        <ul>
+            <li><a href="#home">หน้าแรก</a></li>
+            <li><a href="#about">เกี่ยวกับฉัน</a></li>
+            <li><a href="#contact">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home">
+        <!-- Replace with real image URL later -->
+        <img src="https://via.placeholder.com/180" alt="รูปโปรไฟล์" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Student+Profile&size=180&background=2563eb&color=fff'">
+        <h1>สวัสดี, ฉันชื่อ [ชื่อ-นามสกุล ของคุณ]</h1>
+        <p>นักศึกษาคณะ [ระบุคณะ/สาขา] ผู้มีความหลงใหลในด้านเทคโนโลยีและการออกแบบเว็บไซต์</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">ประวัติย่อ</h2>
+        <div class="about-content">
+            <div>
+                <h3>ประวัติการศึกษา</h3>
+                <p>ปัจจุบันกำลังศึกษาอยู่ที่ [ชื่อมหาวิทยาลัยของคุณ] ชั้นปีที่ [ระบุปีการศึกษา]</p>
+                <p style="margin-top: 1rem;">ฉันมีความสนใจในการพัฒนาเว็บไซต์และการแก้ปัญหาด้วยโค้ด มีความกระตือรือร้นที่จะเรียนรู้เทคโนโลยีใหม่ๆ อยู่เสมอ</p>
+            </div>
+            <div>
+                <h3>ทักษะและความสามารถ (Skills)</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML5 / CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Responsive Design</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">Graphic Design</span>
+                    <span class="skill-tag">Communication</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">ช่องทางติดต่อ</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h3>อีเมล</h3>
+                <p>example@email.com</p>
+            </div>
+            <div class="contact-card">
+                <i class="fa-solid fa-phone"></i>
+                <h3>เบอร์โทรศัพท์</h3>
+                <p>08x-xxx-xxxx</p>
+            </div>
+            <div class="contact-card">
+                <i class="fa-brands fa-line"></i>
+                <h3>Line ID</h3>
+                <p>@mylineid</p>
+            </div>
+            <div class="contact-card">
+                <i class="fa-brands fa-github"></i>
+                <h3>GitHub</h3>
+                <p>github.com/yourname</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 [ชื่อของคุณ]. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
